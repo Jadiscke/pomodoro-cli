@@ -1,0 +1,18 @@
+{
+  "name": "pomodoro-cli",
+  "version": "0.0.1",
+  "description": "A pomodoro CLI application",
+  "main": "cli.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "https://github.com/Jadiscke/pomodoro-cli.git",
+  "author": "Jadiscke <vjtasso@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "sinon": "^9.2.3"
+  }
+}

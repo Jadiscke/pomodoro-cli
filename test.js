@@ -20,7 +20,7 @@ describe("Pomodoro Class", async () => {
 
   it("should return timer as a number", () => {
     const pomodoro = new Pomodoro();
-    const timer = pomodoro.getTimer();
+    const timer = pomodoro.timer;
     assert.isNumber(timer);
   });
 
@@ -29,7 +29,7 @@ describe("Pomodoro Class", async () => {
     const pomodoro = new Pomodoro();
     pomodoro.startTimer();
     clock.tick(1000);
-    const finalTimer = pomodoro.getTimer();
+    const finalTimer = pomodoro.timer;
     assert.equal(finalTimer, expected);
   });
   it("should stop timer", () => {
@@ -38,7 +38,7 @@ describe("Pomodoro Class", async () => {
       const timerReference = pomodoro.startTimer();
       clock.tick(100);
       pomodoro.stopTimer(timerReference);
-      const finalTimer = pomodoro.getTimer();
+      const finalTimer = pomodoro.timer;
       assert.equal(finalTimer, expected);
   });
   it("should start and end Pomodoro session", ()=> {
@@ -48,7 +48,7 @@ describe("Pomodoro Class", async () => {
       pomodoro.startPomodoroSession();
 
       clock.tick(BIG_TIME);
-      const finalTimer = pomodoro.getTimer();
+      const finalTimer = pomodoro.timer;
       assert.equal(finalTimer, expected);
   } )
 });

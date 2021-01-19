@@ -1,6 +1,6 @@
 const { assert } = require("chai");
 const sinon = require("sinon");
-const Pomodoro = require("./pomodoro");
+const Pomodoro = require("../src/pomodoro");
 
 var clock;
 
@@ -33,22 +33,22 @@ describe("Pomodoro Class", async () => {
     assert.equal(finalTimer, expected);
   });
   it("should stop timer", () => {
-      const expected = 0;
-      const pomodoro = new Pomodoro();
-      const timerReference = pomodoro.startTimer();
-      clock.tick(100);
-      pomodoro.stopTimer(timerReference);
-      const finalTimer = pomodoro.timer;
-      assert.equal(finalTimer, expected);
+    const expected = 0;
+    const pomodoro = new Pomodoro();
+    const timerReference = pomodoro.startTimer();
+    clock.tick(100);
+    pomodoro.stopTimer(timerReference);
+    const finalTimer = pomodoro.timer;
+    assert.equal(finalTimer, expected);
   });
-  it("should start and end Pomodoro session", ()=> {
-      const pomodoro = new Pomodoro();
-      const expected = pomodoro.timeLimit;
+  it("should start and end Pomodoro session", () => {
+    const pomodoro = new Pomodoro();
+    const expected = pomodoro.timeLimit;
 
-      pomodoro.startPomodoroSession();
+    pomodoro.startPomodoroSession();
 
-      clock.tick(BIG_TIME);
-      const finalTimer = pomodoro.timer;
-      assert.equal(finalTimer, expected);
-  } )
+    clock.tick(BIG_TIME);
+    const finalTimer = pomodoro.timer;
+    assert.equal(finalTimer, expected);
+  });
 });

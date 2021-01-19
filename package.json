@@ -4,7 +4,8 @@
   "description": "A pomodoro CLI application",
   "main": "cli.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha './tests/**/*.test.js' ",
+    "start": "node src/index.js"
   },
   "repository": "https://github.com/Jadiscke/pomodoro-cli.git",
   "author": "Jadiscke <vjtasso@gmail.com>",

@@ -1,14 +1,12 @@
 const Pomodoro = require("./pomodoro");
-
+const Util = require("./util");
 const main = () => {
-  const pomodoro = new Pomodoro(10000);
+  const DEFAULT_TIMER = 25 * 60 * 1000;
+  const pomodoro = new Pomodoro(DEFAULT_TIMER);
   pomodoro.startPomodoroSession();
   let lastTimer = 0;
   const showReference = setInterval(() => {
-    process.stdout.clearScreenDown();
-    console.log(lastTimer / 1000);
-    process.stdout.moveCursor(0, -1);
-
+    Util.showClockOnConsole(lastTimer / 1000);
     if (lastTimer === pomodoro.timer) clearInterval(showReference);
     lastTimer = pomodoro.timer;
   }, 1000);

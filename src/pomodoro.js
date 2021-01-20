@@ -22,15 +22,13 @@ class Pomodoro {
     return this.#timeLimit;
   }
 
-  #increaseTimerBySecond() {
+  #increaseTimerBySecond = () => () => {
     const actualTimer = this.#timer;
     this.#timer = actualTimer + SECONDS;
-  }
+  };
 
   startTimer() {
-    const intervalReference = () => {
-      this.#increaseTimerBySecond();
-    };
+    const intervalReference = this.#increaseTimerBySecond();
     const timerReference = setInterval(intervalReference, SECONDS);
 
     return timerReference;

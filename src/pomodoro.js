@@ -1,5 +1,4 @@
-const SECONDS = 1000;
-const MINUTES = 60 * SECONDS;
+const { SECONDS, MINUTES } = require("./constants");
 
 class Pomodoro {
   #sessionReference;

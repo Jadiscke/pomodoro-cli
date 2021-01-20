@@ -1,12 +1,9 @@
 const { assert } = require("chai");
 const sinon = require("sinon");
+const { BIG_TIME } = require("../src/constants");
 const Pomodoro = require("../src/pomodoro");
 
 var clock;
-
-const SECONDS = 1000;
-const MINUTES = 60 * 1000;
-const BIG_TIME = 100 * MINUTES;
 
 describe("Pomodoro Class", async () => {
   beforeEach(() => {

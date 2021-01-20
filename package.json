@@ -15,5 +15,8 @@
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "sinon": "^9.2.3"
+  },
+  "dependencies": {
+    "commander": "^7.0.0"
   }
 }

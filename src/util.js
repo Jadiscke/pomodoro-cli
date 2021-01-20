@@ -1,3 +1,6 @@
+const { SECONDS, MINUTES } = require("./constants");
+
+
 class Util {
   constructor() {}
   showClockOnConsole(time) {
@@ -15,6 +18,9 @@ class Util {
     const secondsString = `00${seconds}`.slice(-2);
 
     return `${minutesString}:${secondsString}`;
+  }
+  formatInputToMs(seconds = 0, minutes = 0) {
+    return Number(seconds * SECONDS) + Number(minutes * MINUTES);
   }
 }
 
